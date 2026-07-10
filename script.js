@@ -105,30 +105,6 @@ Se você tem uma empresa, serviço, evento ou campanha para divulgar, oferecemos
   });
 
   if ("IntersectionObserver" in window) {
-    document
-      .querySelectorAll(".card1, .card2")
-      .forEach((item) => item.classList.add("is-visible"));
-
-    const revealItems = document.querySelectorAll(
-      ".card3, .letreiro, .card4, footer, .subcards > div",
-    );
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.16 },
-    );
-
-    revealItems.forEach((item) => {
-      item.classList.add("reveal");
-      revealObserver.observe(item);
-    });
-
     const menuObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -149,11 +125,13 @@ Se você tem uma empresa, serviço, evento ou campanha para divulgar, oferecemos
     );
 
     sections.forEach((section) => menuObserver.observe(section));
-  } else {
-    document
-      .querySelectorAll(".reveal")
-      .forEach((item) => item.classList.add("is-visible"));
   }
+
+  document
+    .querySelectorAll(
+      ".card1, .card2, .card3, .letreiro, .card4, footer, .subcards > div",
+    )
+    .forEach((item) => item.classList.add("is-visible"));
 
   renderContact();
 });

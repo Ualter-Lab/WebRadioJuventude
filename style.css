@@ -448,17 +448,6 @@ footer .p2 {
   color: white;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (min-width: 1600px) {
   header {
     width: min(1480px, calc(100% - 96px));
