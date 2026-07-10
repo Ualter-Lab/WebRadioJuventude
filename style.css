@@ -458,6 +458,7 @@ footer .p2 {
 
   .card4 {
     flex-direction: column;
+    gap: 10px;
   }
 
   .card4 .contatocard,
