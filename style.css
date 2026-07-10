@@ -1,0 +1,656 @@
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.ttf);
+  font-weight: 250;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Newsreader;
+  src: url(fonts/Newsreader-VariableFont_opsz\,wght.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Alasti;
+  src: url(fonts/Alatsi-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Kaushan Script;
+  src: url(fonts/KaushanScript-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  background-color: #e0e0e0;
+  font-family: Newsreader, Georgia, "Times New Roman", serif;
+  color: #252525;
+}
+
+body,
+h1,
+h2,
+p,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+strong {
+  color: #0057b8;
+}
+
+h1 {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 250;
+  line-height: 1.08;
+}
+
+header {
+  width: min(1400px, calc(100% - clamp(20px, 5vw, 80px)));
+  min-height: clamp(72px, 6vw, 104px);
+  margin: 0 auto;
+  padding: clamp(14px, 1.5vw, 24px) clamp(16px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 4vw, 72px);
+  background: rgba(224, 224, 224, 0.96);
+}
+
+.logo1 {
+  flex: 0 0 auto;
+}
+
+.logo1 img {
+  width: clamp(170px, 20vw, 300px);
+}
+
+.taglink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(16px, 4vw, 72px);
+  flex-wrap: wrap;
+}
+
+.taglink a {
+  position: relative;
+  padding: 8px 0;
+  color: #252525;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(13px, 0.9vw, 17px);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 220ms ease;
+  white-space: nowrap;
+}
+
+.taglink a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #0064c9;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
+}
+
+.taglink a:hover,
+.taglink a.active {
+  color: #0064c9;
+}
+
+.taglink a:hover::after,
+.taglink a.active::after {
+  transform: scaleX(1);
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  width: min(1180px, calc(100% - clamp(32px, 8vw, 180px)));
+  margin-inline: auto;
+}
+
+.card1 {
+  text-align: start;
+  max-width: 900px;
+  margin-top: clamp(70px, 10vw, 150px);
+}
+
+.card1 h1 {
+  margin-top: clamp(16px, 3vw, 50px);
+  margin-bottom: 10px;
+  font-size: clamp(38px, 6vw, 70px);
+}
+
+.card1 p {
+  font-size: clamp(20px, 2.1vw, 27px);
+  line-height: 1.18;
+}
+
+.card1 button {
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: rgba(251, 248, 242, 0.2);
+  margin-top: clamp(28px, 4vw, 40px);
+  padding: 8px 12px;
+  font-size: clamp(20px, 2vw, 25px);
+}
+
+.card1 button strong {
+  font-family: Alasti, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.card2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 6vw, 90px);
+  margin-top: clamp(80px, 10vw, 150px);
+}
+
+.card2 .info {
+  flex: 1 1 520px;
+  margin-top: clamp(0px, 4vw, 60px);
+}
+
+.card2 h1 {
+  margin-top: clamp(0px, 3vw, 50px);
+  margin-bottom: 10px;
+  font-size: clamp(38px, 6vw, 70px);
+}
+
+.card2 p {
+  max-width: 600px;
+  font-size: clamp(20px, 2.1vw, 27px);
+  line-height: 1.18;
+}
+
+.card2 .banner1 {
+  flex: 0 1 520px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card2 .banner1 img {
+  width: min(520px, 38vw);
+}
+
+.card3 {
+  margin-top: clamp(70px, 9vw, 130px);
+}
+
+.card3 > h1 {
+  margin: 20px;
+  text-align: center;
+  font-size: clamp(34px, 4.6vw, 54px);
+}
+
+.card3 .subcards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 370px));
+  gap: clamp(16px, 2.5vw, 20px);
+  justify-content: center;
+}
+
+.card3 .subcard {
+  width: 100%;
+  min-height: clamp(170px, 16vw, 188px);
+  border-radius: 10px;
+  padding: clamp(16px, 2vw, 20px) clamp(10px, 2vw, 16px);
+  background-color: #eee8dd;
+  box-shadow: 0 8px 20px rgba(37, 37, 37, 0.08);
+}
+
+.card3 .subcard h1 {
+  margin: 0 0 8px;
+  text-align: start;
+  font-size: clamp(23px, 2.5vw, 34px);
+}
+
+.card3 .subcard p {
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.16;
+}
+
+.letreiro {
+  width: 100%;
+  overflow: hidden;
+  background: #0057b8;
+  padding: clamp(14px, 2vw, 20px) 0;
+  margin-top: clamp(70px, 8vw, 100px);
+}
+
+.letreiro .frases {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: deslizar 28s linear infinite;
+}
+
+.letreiro .frases span {
+  display: none;
+}
+
+.letreiro .frases::before,
+.letreiro .frases::after {
+  content: "Alcance Nacional\00a0\00a0\00a0\00a0\00a0 Conteúdo Diário\00a0\00a0\00a0\00a0\00a0 Comunicação Local\00a0\00a0\00a0\00a0\00a0 Alcance Nacional\00a0\00a0\00a0\00a0\00a0 Conteúdo Diário\00a0\00a0\00a0\00a0\00a0 Comunicação Local\00a0\00a0\00a0\00a0\00a0";
+  color: white;
+  font-family: Kaushan Script, cursive;
+  font-size: clamp(27px, 3.2vw, 35px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.card4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(28px, 5vw, 70px);
+  margin-top: clamp(70px, 8vw, 100px);
+  margin-bottom: clamp(70px, 8vw, 100px);
+}
+
+.card4 .before,
+.card4 .after {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(42px, 4vw, 58px);
+  height: clamp(42px, 4vw, 58px);
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #000 0%, #0057b8 100%);
+}
+
+.card4 .before img,
+.card4 .after img {
+  width: clamp(18px, 2vw, 28px);
+}
+
+.card4 .before.is-business,
+.card4 .after.is-business {
+  background: linear-gradient(90deg, #0057b8 0%, #000 100%);
+}
+
+.card4 .after {
+  transform: rotate(180deg);
+}
+
+.card4 .contatocard {
+  flex: 1 1 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(10px, 2vw, 15px);
+  min-width: 0;
+}
+
+.card4 .cardfale {
+  width: min(400px, 100%);
+  min-height: clamp(430px, 41vw, 499px);
+  border-radius: 12px;
+  background: linear-gradient(213deg, #0057b8 0%, #002752 106.38%);
+  padding: clamp(18px, 2.4vw, 25px);
+  display: flex;
+  flex-direction: column;
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.card4 .cardfale.is-changing {
+  opacity: 0.45;
+}
+
+.card4 .cardfale p {
+  color: #f5f5f5;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: clamp(18px, 1.8vw, 23px);
+  line-height: 1.08;
+}
+
+.card4 .cardfale.is-business {
+  background: linear-gradient(215deg, #202028 77.05%, #0057b8 110.44%);
+}
+
+.card4 .whatsapp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: auto;
+  border: 0;
+  background: transparent;
+  color: #252525;
+}
+
+.card4 .whatsapp img {
+  width: clamp(28px, 3.5vw, 40px);
+}
+
+.card4 .whatsapp h2 {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1;
+}
+
+.card4 .banner2 {
+  flex: 1 1 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.card4 .banner2 img {
+  width: min(400px, 100%);
+  aspect-ratio: 400 / 499;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(32px, 10vw, 200px);
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 4vw, 40px);
+}
+
+footer img {
+  width: clamp(92px, 10vw, 110px);
+  margin-left: clamp(0px, 4vw, 60px);
+}
+
+footer .texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 4vw, 40px);
+  min-width: 0;
+}
+
+footer .p1,
+footer .p2 {
+  font-size: clamp(17px, 1.7vw, 20px);
+  line-height: 1.2;
+}
+
+footer .p1 {
+  max-width: 320px;
+  color: white;
+}
+
+footer .p2 {
+  max-width: 520px;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  padding-left: clamp(20px, 4vw, 40px);
+  color: white;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 1600px) {
+  header {
+    width: min(1480px, calc(100% - 96px));
+    min-height: 112px;
+  }
+
+  .logo1 img {
+    width: clamp(240px, 14vw, 300px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .card2 {
+    align-items: flex-start;
+  }
+
+  .card4 {
+    flex-direction: column;
+  }
+
+  .card4 .contatocard,
+  .card4 .banner2 {
+    width: 100%;
+  }
+
+  footer {
+    gap: clamp(24px, 5vw, 60px);
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .logo1 img {
+    width: min(230px, 78vw);
+  }
+
+  .taglink {
+    width: 100%;
+    justify-content: center;
+    gap: 14px 22px;
+  }
+
+  .taglink a {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  .card2 {
+    flex-direction: column;
+  }
+
+  .card2 .info,
+  .card2 .banner1 {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .card2 .banner1 {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .card2 .banner1 img {
+    width: min(520px, 100%);
+  }
+
+  footer,
+  footer .texto {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer img {
+    margin-left: 0;
+  }
+
+  footer .p2 {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    width: min(100% - 32px, 620px);
+  }
+
+  .card3 .subcards {
+    grid-template-columns: minmax(0, 420px);
+  }
+
+  .card4 .contatocard {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    width: min(100%, calc(100% - 20px));
+    padding-inline: 10px;
+  }
+
+  .taglink {
+    gap: 12px 16px;
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    width: calc(100% - 24px);
+  }
+
+  .card1 {
+    margin-top: 54px;
+  }
+
+  .card1 h1,
+  .card2 h1 {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+
+  .card1 p,
+  .card2 p {
+    font-size: clamp(19px, 5.7vw, 22px);
+  }
+
+  .card3 > h1 {
+    font-size: clamp(32px, 9vw, 38px);
+  }
+
+  .card3 > h1 {
+    margin-inline: 0;
+  }
+
+  .card3 .subcard h1 {
+    font-size: clamp(22px, 7vw, 28px);
+  }
+
+  .card3 .subcard p {
+    font-size: clamp(18px, 5.6vw, 21px);
+  }
+
+  .card4 .contatocard {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+    gap: 8px;
+  }
+
+  .card4 .before,
+  .card4 .after {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .card4 .cardfale {
+    min-height: 400px;
+    padding: 16px;
+  }
+
+  .card4 .cardfale p {
+    font-size: clamp(16px, 5vw, 19px);
+  }
+}
+
+@media (max-width: 360px) {
+  .taglink {
+    gap: 10px 12px;
+  }
+
+  .taglink a {
+    font-size: 12px;
+  }
+
+  .card4 .contatocard {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 6px;
+  }
+
+  .card4 .before,
+  .card4 .after {
+    width: 34px;
+    height: 34px;
+    padding: 7px;
+  }
+
+  .card4 .cardfale {
+    padding: 14px;
+  }
+}
