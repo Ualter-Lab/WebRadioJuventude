@@ -468,6 +468,7 @@ footer .p1,
 footer .p2 {
   font-size: clamp(17px, 1.7vw, 20px);
   line-height: 1.2;
+  text-decoration: none;
 }
 
 footer .p1 {
