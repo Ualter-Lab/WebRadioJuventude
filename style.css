@@ -34,24 +34,16 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
   width: 100%;
   min-width: 320px;
-  min-height: 100%;
-  overflow-x: clip;
+  overflow-x: hidden;
   background-color: #e0e0e0;
   font-family: Newsreader, Georgia, "Times New Roman", serif;
   color: #252525;
-}
-
-@supports not (overflow: clip) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
 }
 
 body,
