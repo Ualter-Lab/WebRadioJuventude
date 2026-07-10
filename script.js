@@ -75,27 +75,10 @@ Se você tem uma empresa, serviço, evento ou campanha para divulgar, oferecemos
         const target = document.querySelector(targetSelector);
         if (!target) return;
 
-        const start = window.scrollY;
-        const end = target.offsetTop;
-        const distance = end - start;
-        const duration = 100;
-
-        let startTime = null;
-
-        function scrollAnimation(currentTime) {
-            if (!startTime) startTime = currentTime;
-
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-
-            window.scrollTo(0, start + distance * progress);
-
-            if (elapsed < duration) {
-                requestAnimationFrame(scrollAnimation);
-            }
-        }
-
-        requestAnimationFrame(scrollAnimation);
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
     }
 
     
