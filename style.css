@@ -417,6 +417,10 @@ header {
   border: 0;
   background: transparent;
   color: #252525;
+  background-color: #FBF8F2;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .card4 .whatsapp img {
